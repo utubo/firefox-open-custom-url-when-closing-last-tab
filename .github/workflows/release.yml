@@ -31,7 +31,7 @@ jobs:
         id: create_release
         uses: marvinpinto/action-automatic-releases@latest
         with:
-          repo?token: ${{ secrets.GITHUB_TOKEN }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
           prerelease: false
           title: ${{ github.ref }}
           files: |
