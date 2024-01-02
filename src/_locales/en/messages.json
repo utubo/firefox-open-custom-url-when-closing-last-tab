@@ -1,0 +1,11 @@
+{
+	"extensionName": {
+		"message": "Open custom url when closing last tab for Android",
+		"description": "Name of the extension."
+	},
+	"extensionDescription": {
+		"message": "Open custom url when closing last tab for Android",
+		"description": "Description of the extension."
+	}
+}
+
