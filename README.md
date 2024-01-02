@@ -1,4 +1,4 @@
-# Simple Gesture
+# Open custom url when closing last tab for Android
 This is an add-on that open custom url closing last tab.
 
 This idea by LET33T37.  
