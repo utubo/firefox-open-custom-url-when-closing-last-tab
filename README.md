@@ -9,5 +9,5 @@ https://addons.mozilla.org/ja/firefox/addon/open-custom-url-w-c-l-t/
 
 ## Licenses
 Under the [MPL2.0 license](http://www.mozilla.org/MPL/2.0/).  
-Copyright 2024 utubo and LET33T37
+Copyright 2024 utubo (and LET33T37)
 
