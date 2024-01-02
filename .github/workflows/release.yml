@@ -29,18 +29,11 @@ jobs:
 
       - name: Create release
         id: create_release
-        uses: elgohr/Github-Release-Action@v5
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: marvinpinto/action-automatic-releases@latest
         with:
+          repo?token: ${{ secrets.GITHUB_TOKEN }}
+          prerelease: false
           title: ${{ github.ref }}
-
-      - name: Upload Release Assets
-        id: upload-release-assets
-        uses: dwenegar/upload-release-assets@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          release_id: ${{ steps.create_release.outputs.id }}
-          assets_path: open-custom-url-when-closing-last-tab.xpi
+          files: |
+            open-custom-url-when-closing-last-tab.xpi
 
