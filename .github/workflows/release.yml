@@ -33,7 +33,7 @@ jobs:
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           prerelease: false
-          title: ${{ github.ref }}
+          title: ${{ github.ref_name }}
           automatic_release_tag: "latest"
           files: |
             open-custom-url-when-closing-last-tab.xpi
