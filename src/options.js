@@ -1,16 +1,23 @@
 (async () => {
   'use strict';
 
-  const textUrl = document.getElementById('url')
-  textUrl.value = (await browser.storage.local.get('url'))?.url || '';
-  console.log(await browser.storage.local.get('url'));
+  const bindings = document.getElementsByClassName('js-bind');
+
+  for (const binding of bindings) {
+    const s = (await browser.storage.local.get(binding.id))
+    binding.value = s && s[binding.id] || binding.getAttribute('data-default');
+  }
 
   let timer = 0;
-  textUrl.addEventListener('input', () => {
+  addEventListener('input', () => {
     clearTimeout(timer);
     timer = setTimeout(() => {
-      browser.storage.local.set({ url: textUrl.value });
-    }, 100);
+      const data = {};
+      for (const binding of bindings) {
+        data[binding.id] = binding.value;
+      }
+      browser.storage.local.set(data);
+    }, 300);
   });
 
 })();
