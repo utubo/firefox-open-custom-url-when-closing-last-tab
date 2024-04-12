@@ -1,32 +1,32 @@
 {
-	"manifest_version": 2,
-	"name": "__MSG_extensionName__",
-	"description": "__MSG_extensionDescription__",
-	"version": "3.1",
-	"default_locale": "en",
+  "manifest_version": 2,
+  "name": "__MSG_extensionName__",
+  "description": "__MSG_extensionDescription__",
+  "version": "3.1",
+  "default_locale": "en",
 
-	"browser_specific_settings": {
-		"gecko": {
-			"id": "open-custom-url-when-closing-last-tab@utb.dip.jp",
-			"strict_min_version": "119.0"
-		},
-		"gecko_android": {
-			"strict_min_version": "119.0"
-		}
-	},
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "open-custom-url-when-closing-last-tab@utb.dip.jp",
+      "strict_min_version": "119.0"
+    },
+    "gecko_android": {
+      "strict_min_version": "119.0"
+    }
+  },
 
-	"options_ui": {
-		"page": "options.html",
-		"open_in_tab": false
-	},
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
 
-	"background": {
-		"scripts": ["background.js"]
-	},
+  "background": {
+    "scripts": ["background.js"]
+  },
 
-	"permissions": [
-		"storage",
-		"tabs"
-	]
+  "permissions": [
+    "storage",
+    "tabs"
+  ]
 }
 
