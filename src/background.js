@@ -25,8 +25,8 @@ browser.tabs.onRemoved.addListener(async () => {
 // -------------------
 
 const replace = async () => {
-  const tabs = await browser.tabs.query({ active: true });
-  if (tabs[0]?.url !== 'about:blank') return;
+  const tabs = await browser.tabs.query({ active: true, status: 'complete', url: 'about:blank' });
+  if (!tabs[0]) return;
   const url = (await browser.storage.local.get('url'))?.url;
   if (!url) return;
   browser.tabs.update(tabs[0].id, { url: url });
