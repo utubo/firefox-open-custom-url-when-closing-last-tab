@@ -5,7 +5,11 @@
 
   for (const binding of bindings) {
     const s = (await browser.storage.local.get(binding.id))
-    binding.value = s && s[binding.id] || binding.getAttribute('data-default');
+    if (binding.type === 'checkbox') {
+      binding.checked = !!s[binding.id];
+    } else {
+      binding.value = s && s[binding.id] || binding.getAttribute('data-default');
+    }
   }
 
   let timer = 0;
@@ -14,7 +18,7 @@
     timer = setTimeout(() => {
       const data = {};
       for (const binding of bindings) {
-        data[binding.id] = binding.value;
+        data[binding.id] = binding.type === 'checkbox' ? binding.checked : binding.value;
       }
       browser.storage.local.set(data);
     }, 300);
